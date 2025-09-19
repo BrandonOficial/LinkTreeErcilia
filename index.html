@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu Linktree</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Seção do Perfil -->
+      <div class="profile-section">
+        <div class="profile-image"><img src="img/Design sem nome.svg" alt="Psicologa Ercilia Ramos"></div>
+        <h1 class="profile-name">Ercilia Ramos</h1>
+        <p class="profile-bio">Psicologa Analítica</p>
+      </div>
+
+      <!-- Links -->
+      <div class="links-container">
+        <a href="https://wa.me/5519971722186" target="_blank" class="link-button">
+          <span class="icon">💬</span>
+          WhatsApp
+        </a>
+      
+        <a href="https://www.instagram.com/psicologia_erciliaramos/" target="_blank" class="link-button">
+          <span class="icon">📱</span>
+          Instagram
+        </a>
+      
+        <a href="mailto:seu-email-aqui@exemplo.com" target="_blank" class="link-button">
+          <span class="icon">📧</span>
+          Email
+        </a>
+      </div>
+      </div>
+    </div>
+
+    <script>
+      // Efeito parallax suave no background
+      document.addEventListener("mousemove", function (e) {
+        const mouseX = e.clientX / window.innerWidth;
+        const mouseY = e.clientY / window.innerHeight;
+
+        document.body.style.background = `
+                radial-gradient(circle at ${mouseX * 100}% ${mouseY * 100}%, 
+                rgba(102, 126, 234, 0.8) 0%, 
+                rgba(118, 75, 162, 0.8) 100%),
+                linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+            `;
+      });
+    </script>
+  </body>
+</html>
