@@ -60,11 +60,37 @@ body {
   margin: 0 auto;
 }
 
+/* mantêm os botões em coluna e faz cada um ocupar toda a largura disponível */
 .links-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: stretch; /* faz os links preencherem a largura do container */
 }
+
+/* botão como flex — centraliza ícone + texto como um bloco */
+.link-button {
+  display: flex;
+  align-items: center; /* centraliza verticalmente */
+  justify-content: center; /* centraliza horizontalmente (ícone+texto) */
+  gap: 12px; /* espaço entre ícone e texto */
+  width: 100%; /* ocupa toda a largura do container */
+  padding: 18px 24px; /* mantém o tamanho/altura que você já tinha */
+  box-sizing: border-box; /* garante que padding não altere o width */
+  text-decoration: none;
+}
+
+/* controla o tamanho do ícone — aumenta se quiser mais impacto */
+.link-button i {
+  font-size: 22px; /* ajusta pra o tamanho que quiser */
+  line-height: 1;
+  display: inline-block;
+  margin-right: 0; /* remove margens antigas (gap já cuida disso) */
+}
+
+/* Se você quiser altura fixa em vez de padding, use (opcional):
+.link-button { height: 56px; padding: 0 24px; }
+*/
 
 .link-button {
   background: rgba(255, 255, 255, 0.95);
@@ -127,9 +153,16 @@ body {
   left: 100%;
 }
 
-.icon {
-  margin-right: 12px;
-  font-size: 18px;
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
 }
 
 @keyframes fadeInUp {
@@ -150,21 +183,30 @@ body {
   }
 
   .profile-image {
-    width: 100px;
-    height: 100px;
-    font-size: 40px;
+    width: 140px; /* menor que 270px */
+    height: 140px;
+    font-size: 32px;
+    margin-bottom: 24px; /* aumenta a distância da foto pro texto */
+  }
+
+  .profile-image img {
+    width: 120px;
+    height: 120px;
   }
 
   .profile-name {
-    font-size: 22px;
+    font-size: 18px;
+    margin-bottom: 6px; /* garante espaço do título pro subtítulo */
   }
 
   .profile-bio {
     font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px; /* espaço antes dos botões */
   }
 
   .link-button {
-    padding: 16px 20px;
-    font-size: 15px;
+    padding: 14px 18px;
+    font-size: 14px;
   }
 }
